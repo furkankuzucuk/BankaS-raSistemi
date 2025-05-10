@@ -13,7 +13,8 @@ namespace BankaSiraSistemi.Services
         {
             new Müşteri { Ad = "Ahmet", Soyad = "Yılmaz", TC = "11111111111", Yaş = 68 },
             new Müşteri { Ad = "Ayşe", Soyad = "Demir", TC = "22222222222", Yaş = 30 },
-            new Müşteri { Ad = "Mehmet", Soyad = "Kaya", TC = "33333333333", Yaş = 66 }
+            new Müşteri { Ad = "Mehmet", Soyad = "Kaya", TC = "33333333333", Yaş = 66 },
+            new Müşteri { Ad="Kadir"   , Soyad = "Demir",TC = "12345678901", Yaş=33}
         };
 
         public void SiraAl(string? tc)

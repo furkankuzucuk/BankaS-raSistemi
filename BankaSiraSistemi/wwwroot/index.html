@@ -6,13 +6,33 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color: #b0bec5;
     }
+
     .card {
       margin: 15px;
     }
+
     .sira-alma input {
       margin-bottom: 10px;
+    }
+
+    .led-display {
+      background-color: black;
+      color: red;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 64px;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      letter-spacing: 8px;
+      box-shadow: 0 0 20px red;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
     }
   </style>
 </head>
@@ -37,7 +57,7 @@
         <div class="card mb-3">
           <div class="card-body">
             <h4 class="card-title">Aktif Çağrılan Sıra</h4>
-            <div id="aktifSira" class="fs-4 text-success">-</div>
+            <div id="aktifSira" class="led-display">-</div>
           </div>
         </div>
 
@@ -92,11 +112,7 @@
       if (result.message) {
         aktifSira.textContent = result.message;
       } else if (result.SiraNo) {
-        if (result.TC && result.Yaş > 0) {
-          aktifSira.textContent = `${result.SiraNo} Yaş: ${result.Yaş}`;
-        } else {
-          aktifSira.textContent = `${result.SiraNo}`;
-        }
+        aktifSira.textContent = result.SiraNo;  // ❗ YAŞ GÖSTERİLMEZ
       } else {
         aktifSira.textContent = "-";
       }
