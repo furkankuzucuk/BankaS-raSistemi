@@ -1,0 +1,6 @@
+@BankaSiraSistemi_HostAddress = http://localhost:5189
+
+GET {{BankaSiraSistemi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

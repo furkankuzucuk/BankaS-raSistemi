@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Banka Sıra Sistemi</title>
+</head>
+<body>
+  <h1>Sıra Alma</h1>
+  <label>TC Kimlik No:</label>
+  <input type="text" id="tcInput" placeholder="TC gir (isteğe bağlı)">
+  <button onclick="siraAlTc()">TC ile Sıra Al</button>
+  <button onclick="siraAlNormal()">Normal Sıra Al</button>
+
+  <hr>
+
+  <h2>Aktif Çağrılan Sıra</h2>
+  <div id="aktifSira">-</div>
+
+  <h2>Sıra Durumu</h2>
+  <ul id="siraListesi"></ul>
+
+  <button onclick="siraCagir()">Sıra Çağır</button>
+
+  <script>
+    async function siraAlTc() {
+      const tc = document.getElementById('tcInput').value;
+      const response = await fetch('/api/sira/sira-al', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(tc)
+      });
+      const result = await response.json();
+      if (result.message) {
+        alert(result.message);
+      }
+      siraDurumu();
+    }
+
+    async function siraAlNormal() {
+      const response = await fetch('/api/sira/sira-al', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify("")
+      });
+      const result = await response.json();
+      if (result.message) {
+        alert(result.message);
+      }
+      siraDurumu();
+    }
+
+    async function siraCagir() {
+      const response = await fetch('/api/sira/sira-cagir', {
+        method: 'POST'
+      });
+
+      const result = await response.json();
+      const aktifSira = document.getElementById('aktifSira');
+
+      if (result.message) {
+        aktifSira.textContent = result.message; // örn: "Bekleyen müşteri yok."
+      } else if (result.SiraNo) {
+        if (result.TC && result.Yaş > 0) {
+          aktifSira.textContent = `${result.SiraNo} Yaş: ${result.Yaş}`;
+        } else {
+          aktifSira.textContent = `${result.SiraNo}`;
+        }
+      } else {
+        aktifSira.textContent = "-";
+      }
+
+      siraDurumu();
+    }
+
+    async function siraDurumu() {
+      const response = await fetch('/api/sira/sira-durumu');
+      const list = await response.json();
+      const ul = document.getElementById('siraListesi');
+      ul.innerHTML = "";
+
+      list.forEach(m => {
+        const li = document.createElement('li');
+        if (m.TC && m.Yaş > 0) {
+          li.textContent = `${m.SiraNo} - Yaş: ${m.Yaş}`;
+        } else {
+          li.textContent = `${m.SiraNo}`;
+        }
+        ul.appendChild(li);
+      });
+    }
+
+    window.onload = siraDurumu;
+  </script>
+</body>
+</html>

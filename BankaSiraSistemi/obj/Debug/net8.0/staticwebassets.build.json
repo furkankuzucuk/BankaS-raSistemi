@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "GYEk4lA/RC4p3vZMT9n3G36wpRH+kFVkMAhiVBde0Pk=",
+  "Source": "BankaSiraSistemi",
+  "BasePath": "_content/BankaSiraSistemi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BankaSiraSistemi/wwwroot",
+      "Source": "BankaSiraSistemi",
+      "ContentRoot": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/wwwroot/",
+      "BasePath": "_content/BankaSiraSistemi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/wwwroot/index.html",
+      "SourceId": "BankaSiraSistemi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/wwwroot/",
+      "BasePath": "_content/BankaSiraSistemi",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ]
+}
