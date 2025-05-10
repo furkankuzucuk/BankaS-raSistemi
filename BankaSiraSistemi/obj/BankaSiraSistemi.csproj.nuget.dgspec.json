@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/BankaSiraSistemi.csproj": {}
+    "/Users/furkankuzucuk/Documents/GitHub/BankaS-raSistemi/BankaSiraSistemi/BankaSiraSistemi.csproj": {}
   },
   "projects": {
-    "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/BankaSiraSistemi.csproj": {
+    "/Users/furkankuzucuk/Documents/GitHub/BankaS-raSistemi/BankaSiraSistemi/BankaSiraSistemi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/BankaSiraSistemi.csproj",
+        "projectUniqueName": "/Users/furkankuzucuk/Documents/GitHub/BankaS-raSistemi/BankaSiraSistemi/BankaSiraSistemi.csproj",
         "projectName": "BankaSiraSistemi",
-        "projectPath": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/BankaSiraSistemi.csproj",
+        "projectPath": "/Users/furkankuzucuk/Documents/GitHub/BankaS-raSistemi/BankaSiraSistemi/BankaSiraSistemi.csproj",
         "packagesPath": "/Users/furkankuzucuk/.nuget/packages/",
-        "outputPath": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/obj/",
+        "outputPath": "/Users/furkankuzucuk/Documents/GitHub/BankaS-raSistemi/BankaSiraSistemi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/furkankuzucuk/.nuget/NuGet/NuGet.Config"

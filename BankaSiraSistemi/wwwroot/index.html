@@ -3,23 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <title>Banka Sıra Sistemi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      margin: 15px;
+    }
+    .sira-alma input {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Sıra Alma</h1>
-  <label>TC Kimlik No:</label>
-  <input type="text" id="tcInput" placeholder="TC gir (isteğe bağlı)">
-  <button onclick="siraAlTc()">TC ile Sıra Al</button>
-  <button onclick="siraAlNormal()">Normal Sıra Al</button>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <!-- Sıra Alma Paneli -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body sira-alma">
+            <h4 class="card-title text-center mb-4">Sıra Alma</h4>
+            <label>TC Kimlik No:</label>
+            <input type="text" id="tcInput" class="form-control" placeholder="TC gir (isteğe bağlı)">
+            <button onclick="siraAlTc()" class="btn btn-primary w-100 mt-3">TC ile Sıra Al</button>
+            <button onclick="siraAlNormal()" class="btn btn-secondary w-100 mt-2">Normal Sıra Al</button>
+          </div>
+        </div>
+      </div>
 
-  <hr>
+      <!-- Durum ve Çağırma Paneli -->
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4 class="card-title">Aktif Çağrılan Sıra</h4>
+            <div id="aktifSira" class="fs-4 text-success">-</div>
+          </div>
+        </div>
 
-  <h2>Aktif Çağrılan Sıra</h2>
-  <div id="aktifSira">-</div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4 class="card-title">Sıra Durumu</h4>
+            <ul id="siraListesi" class="list-group"></ul>
+          </div>
+        </div>
 
-  <h2>Sıra Durumu</h2>
-  <ul id="siraListesi"></ul>
-
-  <button onclick="siraCagir()">Sıra Çağır</button>
+        <button onclick="siraCagir()" class="btn btn-danger w-100">Sıra Çağır</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     async function siraAlTc() {
@@ -58,7 +90,7 @@
       const aktifSira = document.getElementById('aktifSira');
 
       if (result.message) {
-        aktifSira.textContent = result.message; // örn: "Bekleyen müşteri yok."
+        aktifSira.textContent = result.message;
       } else if (result.SiraNo) {
         if (result.TC && result.Yaş > 0) {
           aktifSira.textContent = `${result.SiraNo} Yaş: ${result.Yaş}`;
@@ -80,6 +112,7 @@
 
       list.forEach(m => {
         const li = document.createElement('li');
+        li.className = 'list-group-item';
         if (m.TC && m.Yaş > 0) {
           li.textContent = `${m.SiraNo} - Yaş: ${m.Yaş}`;
         } else {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GYEk4lA/RC4p3vZMT9n3G36wpRH+kFVkMAhiVBde0Pk=",
+  "Hash": "kV+LpV1RrPJnRzh36L1dw3PrURbv3r/phnDDUuOlVrE=",
   "Source": "BankaSiraSistemi",
   "BasePath": "_content/BankaSiraSistemi",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "BankaSiraSistemi/wwwroot",
       "Source": "BankaSiraSistemi",
-      "ContentRoot": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/wwwroot/",
+      "ContentRoot": "/Users/furkankuzucuk/Documents/GitHub/BankaS-raSistemi/BankaSiraSistemi/wwwroot/",
       "BasePath": "_content/BankaSiraSistemi",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/wwwroot/index.html",
+      "Identity": "/Users/furkankuzucuk/Documents/GitHub/BankaS-raSistemi/BankaSiraSistemi/wwwroot/index.html",
       "SourceId": "BankaSiraSistemi",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/furkankuzucuk/Documents/GitHub/HireSync/BankaS-raSistemi/BankaSiraSistemi/wwwroot/",
+      "ContentRoot": "/Users/furkankuzucuk/Documents/GitHub/BankaS-raSistemi/BankaSiraSistemi/wwwroot/",
       "BasePath": "_content/BankaSiraSistemi",
       "RelativePath": "index.html",
       "AssetKind": "All",
